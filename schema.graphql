@@ -1,0 +1,42 @@
+schema {
+    query:Query
+    mutation:Mutation,
+    subscription:Subscription
+}
+
+type Query {
+    shoe(id:String!):Shoe
+    shoes:[Shoe!]!,
+    featuredShoes:[Shoe!]!
+}
+
+interface Ware {
+    id:String!,
+    price:Float!
+}
+
+type Shoe implements Ware {
+    id:String!,
+    price:Float!,
+    name:String!,
+    brand:String!,
+    description:String,
+    images:[String!]!
+}
+
+type Mutation {
+    addShoe(input:ShoeInput!):Shoe
+    delShoe(id:String!):Boolean!,
+    delShoes(ids:[String!]!):[Boolean!]!
+}
+input ShoeInput {
+    id:String!,
+    price:Float!,
+    name:String!,
+    brand:String!,
+    description:String,
+    images:[String!]!
+}
+type Subscription {
+    rateChanged:Float!
+}

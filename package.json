@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "npx tsc && node ./dist/index.js",
+    "start": "node ./dist/index.js",
+    "generate": "graphql-codegen"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/typescript": "^4.0.7",
+    "@graphql-codegen/typescript-resolvers": "^4.1.0",
+    "typescript": "^5.5.2"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.10.4",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "graphql": "^16.9.0",
+    "graphql-redis-subscriptions": "^2.6.1",
+    "graphql-subscriptions": "^2.0.0",
+    "graphql-tag": "^2.12.6"
+  }
+}
